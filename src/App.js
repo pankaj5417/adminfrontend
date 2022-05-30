@@ -15,8 +15,8 @@ function App() {
       <Topbar />
       <div className="container">
         <Routes>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/" element={<SignUp />}></Route>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
 
           <Route path="/users" element={<UserList />}></Route>
           <Route path="/home" element={<Home />}></Route>

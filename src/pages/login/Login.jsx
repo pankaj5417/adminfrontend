@@ -50,8 +50,9 @@ export const Login = () => {
         console.log("userpostdata", res);
         return res.json();
       })
-      .then((user) => {
-          console.log(user)
+      .then((res) => {
+        alert(res.message)
+          console.log(res.message)
 
       })
       .catch(err=>{

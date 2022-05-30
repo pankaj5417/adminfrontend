@@ -8,7 +8,7 @@ export const Topbar = () => {
   const logoutUser = () => {
     localStorage.removeItem("loginStatus");
     localStorage.removeItem("userData");
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -31,11 +31,11 @@ export const Topbar = () => {
             </h4>
           ) : (
             <>
-              <Link to="/login" style={{ textDecoration: "none" }}>
+              <Link to="/" style={{ textDecoration: "none" }}>
                 <h4>Login</h4>
               </Link>
 
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/signup" style={{ textDecoration: "none" }}>
                 <h4>Singup</h4>
               </Link>
             </>
