@@ -32,6 +32,7 @@ export const Login = () => {
         setUserDetails(user);
         localStorage.setItem("userData", JSON.stringify(user));
         localStorage.setItem("loginStatus",JSON.stringify({isLogin:true}))
+        alert("login successfull")
         navigate("/home")
       })
       .catch(err=>{
