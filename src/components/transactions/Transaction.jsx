@@ -35,19 +35,19 @@ export const Transaction = ({ data }) => {
                 item.username === userData.user.name && (
                   <>
                     <TableRow key={index}>
-                      <TableData>{item.id}</TableData>
-                      <TableData>{item.header}</TableData>
-                      <TableData>
-                        <div className="userInfo">
-                          <span>{item.username}</span>
-                        </div>
-                      </TableData>
-
-                      <TableData>{item.amount}</TableData>
-                      <TableData>
-                        <Button type={item.status} />
-                      </TableData>
-                    </TableRow>
+                  <TableData>{item.id}</TableData>
+                  <TableData>
+                    <div className="userInfo">
+                      <span>{item.username}</span>
+                    </div>
+                  </TableData>
+                  <TableData>{item.header}</TableData>
+                  <TableData>{item.type}</TableData>
+                  <TableData>{item.amount}</TableData>
+                  <TableData>
+                    <Button type={item.status} />
+                  </TableData>
+                </TableRow>
                   </>
                 )
             )}
