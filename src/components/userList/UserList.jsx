@@ -29,7 +29,8 @@ export const UserList = () => {
               <TableHeading>Phone</TableHeading>
               <TableHeading>Status</TableHeading>
               <TableHeading>Amount</TableHeading>
-              <TableHeading>Type</TableHeading>
+              {userData.user.role === "admin" ? (
+              <TableHeading>Type</TableHeading>):""}
             </TableRow>
             {data.map((item, index) => {
               return (

@@ -28,7 +28,9 @@ export const SignUp = () => {
       .then((user) => {
         console.log(user);
         setSignup(user);
+        alert("signup successfull")
       }).catch(err=>{
+        alert(err)
         console.log(err)
     })
   };
