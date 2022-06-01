@@ -36,9 +36,10 @@ export const SignUp = () => {
   };
   return (
     <>
-      <div className="singup">
+      <form onSubmit={signupUser} className="singup">
         <TextField
           variant="standard"
+          required={true}
           placeholder="Enter username"
           className="inputBox"
           type="text"
@@ -49,6 +50,7 @@ export const SignUp = () => {
         <TextField
           variant="standard"
           placeholder="Enter email"
+          required={true}
           className="inputBox"
           type="email"
           name="email"
@@ -57,6 +59,7 @@ export const SignUp = () => {
         <br />
         <TextField
           variant="standard"
+          required={true}
           placeholder="Enter mobile number"
           className="inputBox"
           type="number"
@@ -66,6 +69,7 @@ export const SignUp = () => {
         <br />
         <TextField
           variant="standard"
+          required={true}
           placeholder="Enter password"
           className="inputBox"
           type="password"
@@ -75,6 +79,7 @@ export const SignUp = () => {
         <br />
         <TextField
           variant="standard"
+          required={true}
           placeholder="Enter role"
           className="inputBox"
           type="text"
@@ -83,17 +88,18 @@ export const SignUp = () => {
         />
         <Button
           variant="contained"
+          type="submit"
           style={{
             backgroundColor: "#ff5722",
             height: "50px",
             fontWeight: "600",
           }}
-          onClick={signupUser}
+         
           className="singupButton"
         >
           Sign Up
         </Button>
-      </div>
+      </form>
     </>
   );
 };

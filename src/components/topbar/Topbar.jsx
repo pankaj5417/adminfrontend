@@ -27,7 +27,7 @@ export const Topbar = () => {
         <div className="topbarRight">
           {loginStatus ? (
             <h4 style={{ cursor: "pointer" }} className="" onClick={logoutUser}>
-              Hello,{userData.user.name}&nbsp;Logout
+              Hello,{userData?.user.name}&nbsp;Logout
             </h4>
           ) : (
             <>

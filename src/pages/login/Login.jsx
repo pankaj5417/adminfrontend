@@ -15,7 +15,8 @@ export const Login = () => {
   };
   console.log(login);
   useEffect(() => {}, []);
-  const signinUser = () => {
+  const signinUser = (e) => {
+    e.preventDefault()
     fetch(`${URL}/userData/login`, {
       method: "POST",
       headers: {
@@ -30,10 +31,17 @@ export const Login = () => {
       .then((user) => {
         console.log(user);
         setUserDetails(user);
-        localStorage.setItem("userData", JSON.stringify(user));
-        localStorage.setItem("loginStatus",JSON.stringify({isLogin:true}))
-        alert("login successfull")
-        navigate("/home")
+        console.log("user",user)
+        if(user!=="user not found"){
+          localStorage.setItem("userData", JSON.stringify(user));
+          localStorage.setItem("loginStatus",JSON.stringify({isLogin:true}))
+          alert("login successfull")
+          navigate("/home")
+
+        }
+        else{
+          alert("wrong credentials")
+        }
       })
       .catch(err=>{
         console.log(err)
@@ -63,12 +71,13 @@ export const Login = () => {
 
   return (
     <>
-      <div className="login">
+      <form onSubmit={signinUser} className="login">
         <TextField
           variant="standard"
           placeholder="Enter email"
           className="inputBox"
           type="email"
+          required={true}
           name="email"
           onChange={handleChange}
         />
@@ -77,6 +86,7 @@ export const Login = () => {
           variant="standard"
           placeholder="Enter Password"
           className="inputBox"
+          required={true}
           type="password"
           name="password"
           onChange={handleChange}
@@ -85,12 +95,13 @@ export const Login = () => {
 
         <Button
           variant="contained"
+          type="submit"
           style={{
             backgroundColor: "#ff5722",
             height: "50px",
             fontWeight: "600",
           }}
-          onClick={signinUser}
+         
           className="loginButton"
         >
           Login
@@ -103,7 +114,7 @@ export const Login = () => {
         >
           Forgot password
         </Button>
-      </div>
+      </form>
     </>
   );
 };
